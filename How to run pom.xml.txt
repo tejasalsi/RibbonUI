@@ -1,0 +1,7 @@
+Create 2 Run Configurations for pom.xml
+
+1. To clean 
+clean
+
+2. To recompile widgetset
+vaadin:compile package -X

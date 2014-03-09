@@ -1,0 +1,46 @@
+/* Import the reindeer theme.*/
+/* This only allows us to use the mixins defined in it and does not add any styles by itself. */
+@import "../runo/runo.scss";
+
+/* This contains all of your theme.*/
+/* If somebody wants to extend the theme she will include this mixin. */
+@mixin loantheme {
+  /* Include all the styles from the reindeer theme */
+  @include runo;
+
+  /* Insert your theme rules here */
+    
+     .v-app{
+        background: #267391;
+    }
+    .v-button .v-button-caption {
+        color: blue;
+        font-style: oblique;
+        font-size: "18";
+        
+    }
+    .loantheme .v-button .v-button-wrap {
+                background: #005DFC;
+
+    }
+    
+    .v-menubar{
+        padding: 0 8px;
+        background-image:url(background.png);
+            
+    }
+    .v-menubar .v-menubar-menuitem:hover{
+        color: #ffffff;
+        
+    }
+    .v-menubar .v-menubar-menuitem {
+        border: 0px;
+        height: inherit;
+    }
+    
+    
+    .v-select-optiongroup-horizontalgroup .v-select-option {
+     /* This css-code has been added to display the OptionGroup to display vertically */ 
+ 	   display: inline-block;
+    }
+}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>RibbonUI</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>our.company.name.loan.LoginServlet</servlet-class>
+		<init-param>
+			<param-name>UI</param-name>
+			<param-value>our.company.name.loan.LoginUI</param-value>
+		</init-param>
+		<init-param>
+			<description>Application widgetset</description>
+			<param-name>widgetset</param-name>
+			<param-value>our.company.name.loan.widgetset.RibbonuiWidgetset</param-value>
+		</init-param>
+	</servlet>
+
+	<!-- Time-out Interval in seconds -->
+	<context-param>
+		<param-name>heartbeatInterval</param-name>
+		<param-value>300</param-value>
+	</context-param>
+
+	<!-- To prevent One-click Attacks / Session Riding -->
+	<context-param>
+		<param-name>disable-xsrf-protection</param-name>
+		<param-value>false</param-value>
+	</context-param>
+
+
+
+
+
+	<!-- Code for Integrating Spring into this Vaadin Application (START) -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>WEB-INF/spring-resources/spring-xmls/spring-application.xml</param-value>
+	</context-param>
+
+	<!-- Code for Integrating Spring into this Vaadin Application (END) -->
+
+
+
+</web-app>
